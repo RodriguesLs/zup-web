@@ -1,0 +1,54 @@
+Para instalar o Docker
+https://docs.docker.com/install/#cloud
+
+
+ Instalação
+ ========================================================
+ 1) O script de instalação foi feito usando como base o SO Fedora
+ 2) Copiar os arquivos install.sh e docker-compose.yml para a pasta /opt
+ 3) Dar permissão de execução para o arquivo install.sh e executar
+  - chmod +x install.sh
+  - ./install.sh
+4) Quando for rodar o docker pela primeira vez descomentar as configurações
+de working_dir e entrypoint no arquivo docker-compose.yml no container zup_api.
+Isso é preciso pois essas duas configuração são responsáveis por criar a estrutura
+da base de dados no postgresql, depois que todos os containeres iniciarem as duas
+configurações devem ser comentadas
+
+se ja existir base deletar
+
+rm -rfv /opt/zup/postgres-data/ && mkdir -p /opt/zup/postgres-data/
+
+
+Docker Compose
+========================================================
+1) Compila/inicia todos containeres
+ - docker-compose up --build
+2) Finaliza todos containeres
+ - docker.compose down
+3) Compila/inicia todos containeres em background
+ - docker-compose up --build -d
+4) Reinicia todos containeres
+ - docker-compose restart
+5) Lista os containeres em execução
+ - docker stats
+
+Atualização da aplicação
+========================================================
+1) Atualização do sistema operacional e checkout das últimas alterações
+ - ./install.sh
+2) Finaliza todos containeres
+ - docker-compose down
+3) Compila/inicia todos containeres
+ - docker-compose up --build -d
+Obs: Todas as alterações deve ser feitas e comitadas no repositório git
+
+
+Administrator email: admin@zeladoriaurbana.com.br
+Administrator password: a31a13782
+
+******************************************************************
+Administrator email: admin@zeladoriaurbana.com.br
+Administrator password: 0ad4cba1a
+
+
