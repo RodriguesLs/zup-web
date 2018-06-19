@@ -72,13 +72,13 @@ else
         [ -d /landing-page/images ] && cp -R /landing-page/images/*.* /var/www/zup-landing/images
 
         if [ -z "$PAGE_TITLE" ]; then
-                sed -i "s@PAGE_TITLE@ZUP@g" /var/www/zup-landing/index.html
+                sed -i "s@PAGE_TITLE@ZELL@g" /var/www/zup-landing/index.html
         else
                 sed -i "s@PAGE_TITLE@$PAGE_TITLE@g" /var/www/zup-landing/index.html
         fi
 
         if [ -z "$APPLICATION_NAME" ]; then
-                sed -i "s@APPLICATION_NAME@ZUP@g" /var/www/zup-landing/index.html
+                sed -i "s@APPLICATION_NAME@ZELL@g" /var/www/zup-landing/index.html
         else
                 sed -i "s@APPLICATION_NAME@$APPLICATION_NAME@g" /var/www/zup-landing/index.html
         fi
